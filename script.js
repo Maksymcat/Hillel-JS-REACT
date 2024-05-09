@@ -1,3 +1,5 @@
+// Homework #1
+
 let number = 50;
 console.log(typeof number);
 
@@ -25,3 +27,8 @@ console.log(typeof uniqueID);
 
 let bred = function(){};
 console.log(typeof bred);
+
+
+// Homework #3
+
+console.log("12345".split("").join(" "));
