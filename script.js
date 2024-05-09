@@ -28,7 +28,13 @@ console.log(typeof uniqueID);
 let bred = function(){};
 console.log(typeof bred);
 
+//Homework #2
 
+let userName = "Boris";
+let surName = "Johnson";
+let father = "Joseph";
+
+console.log(`${userName} ${surName} ${father}`);
 // Homework #3
 
 console.log("12345".split("").join(" "));
