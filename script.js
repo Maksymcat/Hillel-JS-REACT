@@ -30,11 +30,16 @@ console.log(typeof bred);
 
 //Homework #2
 
-let userName = "Boris";
-let surName = "Johnson";
-let father = "Joseph";
+// let test = prompt("Яке твоє ПІБ?", 'Панасенко Іван Вікторович');
+ // alert(`${test}`);                                    //this
 
-console.log(`${userName} ${surName} ${father}`);
+  let userName = prompt('userName');
+  let surName = prompt('surname');
+  let father = prompt('father');                      //or this 
+  alert(`${userName} ${surName} ${father}`);
+
 // Homework #3
+let num = 12345
+  console.log(`${num}`.split("").join(" "));
 
-console.log("12345".split("").join(" "));
+
