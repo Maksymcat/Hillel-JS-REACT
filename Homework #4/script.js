@@ -1,16 +1,6 @@
-let numOrStr = prompt('input number or string');
-console.log(numOrStr)
-
-switch(true) {
-    case null : 
-	    console.log('ви скасували')
-    break;
-    case( numOrStr.trim() === '' ):
-        console.log('Empty String')
-    break;
-    case isNaN( +numOrStr):
-        console.log(' number is Ba_NaN')
-        break;
-    default:
-	console.log('OK!')
+let number = prompt("Ціле число");
+if(number % 2 === 0 ){
+    alert("Складене число")
+}else{
+    alert('Просте число')
 }
