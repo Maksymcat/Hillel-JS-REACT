@@ -1,23 +1,18 @@
 let birthYear = prompt('Вкажіть ваш рік народження');
-if(birthYear){
-    
-}
-else{
+if(!birthYear){
     alert("Шкода, що ти не ввів свій рік народження")
 }
-let city = prompt('В якому місті ви живете?');
-if(city){
 
-}
-else{
+let city = prompt('В якому місті ви живете?');
+if(!city){
     alert("Шкода, що ти не ввів місто, де ти проживаєш")
 }
+
 let sport = prompt('Який ваш улюблений вид спорту?');
-if(sport){
-}
-else{
+if(!sport){
     alert("Шкода, що ти не ввів свій улюблений вид спорту")
 }
+
 
 
 let yearsOld = new Date().getFullYear() - birthYear; 
