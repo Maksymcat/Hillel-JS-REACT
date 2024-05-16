@@ -1,2 +1,11 @@
-let userName = prompt('Введіть своє імя');
-alert(`Hello, ${userName}! How are you?`);
+sum = 1
+for(index = 20;index <= 30; index++){
+    index -= 0.5
+console.log(index + 0.5);
+
+
+}
+    
+   
+
+
