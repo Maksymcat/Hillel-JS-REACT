@@ -1,12 +1,19 @@
-let numOrStr = prompt('input number or string');
-console.log(numOrStr)
+var input = document.getElementById('input');
+var key = document.getElementById('key');
+var button = document.getElementById('button');
 
-if(numOrStr === null) {
-	console.log('ви скасували')
-} else if( numOrStr.trim() === '' ) {
-	console.log('Empty String');
-} else if ( isNaN( +numOrStr ) ) {
-	console.log(' number is Ba_NaN')
-} else {
-	console.log('OK!')
-}
+
+function keyDeleter() { 
+  var Arrkey = key.value.split('');
+  var ArrValue = input.value.split(' ');
+  for(var i = 0; i < ArrValue.length; i++) {
+    console.log(ArrValue);
+    var newArr = ArrValue[i].split(''); // Расщепление на буквы 
+    console.log(newArr); 
+    for(var j = 0; j < newArr.length; j++) {
+       if(newArr[j] == Arrkey[0]) {
+          console.log('Совпадение');
+       }
+    }
+  }
+} 
