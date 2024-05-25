@@ -10,4 +10,4 @@ let numbersArr = numbers.split("")
 };
 
 console.log(removeElement(numbersArr, 3));
-console.log(removeElement(numbersArr,3)); 
+console.log(removeElement(numbersArr,3)); o;u5h68   q`zs52q`q`12ut675765`

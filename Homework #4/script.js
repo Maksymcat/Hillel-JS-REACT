@@ -2,7 +2,7 @@
   const filterItems = (arr, query) => {
 
   return arr.filter(
-    (el) => el.indexOf(query) === -1,
+    (el) => el.indexOf()(query) === -1,
   )
 };
 
