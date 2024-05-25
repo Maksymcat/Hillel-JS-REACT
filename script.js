@@ -1,19 +1,17 @@
-var input = document.getElementById('input');
-var key = document.getElementById('key');
-var button = document.getElementById('button');
 
-
-function keyDeleter() { 
-  var Arrkey = key.value.split('');
-  var ArrValue = input.value.split(' ');
-  for(var i = 0; i < ArrValue.length; i++) {
-    console.log(ArrValue);
-    var newArr = ArrValue[i].split(''); // Расщепление на буквы 
-    console.log(newArr); 
-    for(var j = 0; j < newArr.length; j++) {
-       if(newArr[j] == Arrkey[0]) {
-          console.log('Совпадение');
-       }
+function myNane(arr){
+    let sum = 0
+    let numbers = 0
+    for(let argument of arr){
+      if(typeof argument === "number" )
+sum += argument
+      numbers++
+      let target = sum  / numbers 
+      console.log(target)
+      return target;
     }
-  }
-} 
+            
+}
+let myArr = ["asdasd","asdasd",5,10,20]
+let average = myNane(myArr)
+console.log(average)

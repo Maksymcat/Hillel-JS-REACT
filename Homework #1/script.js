@@ -1,14 +1,20 @@
-const fruits = prompt("asdasd")
-const fruitss = fruits.split("")
-let letter = prompt("asdasd");
 
-  
-  const filterItems = (arr, query) => {
+function express(a){
 
-  return arr.filter(
-    (el) => el.indexOf(query) === -1,
-  ).join("  ");
-};
+let massivch = "wafasad";
+let massiv = massivch.split("");
+let lett = "a"
+let noul;
+for(let index of massiv){
+    if(index !== lett){
+        noul = 0
+        noul += index
 
-console.log(filterItems(fruitss, `${letter}`));
-console.log(filterItems(fruitss, `${letter}`)); 
+        console.log(index)
+        return noul;
+    }
+
+}
+let expression = express(a)
+console.log(expression)
+}

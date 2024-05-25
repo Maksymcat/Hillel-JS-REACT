@@ -1,13 +1,13 @@
-let n = prompt("Введіть ціле число")
+let numbers = prompt("123455")
+let numbersArr = numbers.split("")
 
-outer : for(i = 1;i <= 100;i++){
-    let i2 = i * i;
-   
-    if(i2 > n){
-        
-    break outer;
-         
-    }
-    console.log(i)
-}
+ 
+  const removeElement = (array, item) => {
 
+  return array.filter(
+    (el) => el.indexOf(item) === -1,
+  )
+};
+
+console.log(removeElement(numbersArr, 3));
+console.log(removeElement(numbersArr,3)); 

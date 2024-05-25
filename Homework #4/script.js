@@ -1,8 +1,10 @@
-let number = prompt("Ціле число");
-if(number % 2 === 0  ){
-    alert("Складене число")
-}else if(number > 1){
-    alert('Просте число')
-}else{
-    alert('1')
-}
+
+  const filterItems = (arr, query) => {
+
+  return arr.filter(
+    (el) => el.indexOf(query) === -1,
+  )
+};
+
+console.log(filterItems([1,2,3,4,5], 3));
+console.log(filterItems([1,2,3,4,5], 3)); 

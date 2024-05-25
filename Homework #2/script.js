@@ -1,5 +1,25 @@
-let dolar = 26
+function findAverage(arr) {
+    let sum = 0;
+    let numbers = 0;
 
-for(i = 10;i <= 100; i+= 10){
-    console.log("===" + i * dolar)
+    arr.forEach(function(element) {
+        
+        if (typeof element === 'number' && !isNaN(element)) {
+            sum += element;
+            numbers++;
+        }
+    });
+
+    if (numbers === 0) {
+       
+        return NaN;
+    }
+
+    let average = sum / numbers;
+    return average;
 }
+
+
+let myArr = [35, , "3", 70, "5",105]; 
+let average = findAverage(myArr);
+console.log("Середнє арифметичне: " + average);
