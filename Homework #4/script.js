@@ -1,10 +1,18 @@
+let myArr = [1,2,3,4,5,6]
+let newArr  = []
 
-  const filterItems = (arr, query) => {
+function removeElement(a,b){
+  
 
-  return arr.filter(
-    (el) => el.indexOf()(query) === -1,
-  )
-};
+ for( i = 0;i <= myArr.length;i++){
+  if(b !== myArr[i]){
+    newArr.push(myArr[i])
+  }
 
-console.log(filterItems([1,2,3,4,5], 3));
-console.log(filterItems([1,2,3,4,5], 3)); 
+  
+ }
+ 
+ return newArr.join("")
+}
+let bestArray = removeElement(newArr,1)
+console.log(bestArray)
