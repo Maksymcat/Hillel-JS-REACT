@@ -1,4 +1,4 @@
-function eXpress(){
+function getCalculate(){
 
   let myArr = []
 
@@ -20,4 +20,4 @@ myArr.forEach(element => {
 });
 }
 
-eXpress()
+getCalculate()
