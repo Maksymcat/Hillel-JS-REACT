@@ -1,13 +1,23 @@
-let numbers = prompt("123455")
-let numbersArr = numbers.split("")
+function eXpress(){
 
+  let myArr = []
+
+outer: for (i = 0;i <= 10;i++)  {
+  let number = prompt("Введіть будь-яке число більше 100")
  
-  const removeElement = (array, item) => {
+   if(number <= 100  ){
+    myArr.push(number)
+    alert("Введіть ще раз")
+  }else if(number > 100){
+    myArr.push(number)
+    break outer;
+  }else if(typeof number !== "number"){
+    alert("Введіть число")
+  }
+}
+myArr.forEach(element => {
+  console.log(element)
+});
+}
 
-  return array.filter(
-    (el) => el.indexOf(item) === -1,
-  )
-};
-
-console.log(removeElement(numbersArr, 3));
-console.log(removeElement(numbersArr,3)); o;u5h68   q`zs52q`q`12ut675765`
+eXpress()
