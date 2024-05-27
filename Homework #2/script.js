@@ -1,9 +1,13 @@
+let result;
 function getCalculate(a){
+   
     return(b) => {
+        result = a + b
         return a + b
     }
     
     
 }
 let isName = getCalculate
-console.log(isName(5)(2))
+isName(7)(2)
+console.log(result)
