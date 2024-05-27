@@ -1,10 +1,9 @@
-function addElement(){
-    let sum = 0
-   return function(value){
-    sum += value;
-    return sum;
-   };
+function getCalculate(a){
+    return(b) => {
+        return a + b
+    }
+    
+    
 }
-let sum = addElement();
-console.log(sum(20))
-console.log(sum(10))
+let isName = getCalculate
+console.log(isName(5)(2))
