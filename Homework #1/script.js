@@ -1,21 +1,17 @@
-let bobik = [1,2,3,4,"adasd","adssa",5]
-
-let allSum = function(someArray){
-    let numbers;
-let ben; 
-    return someArray.reduce((acc, number) => {
-        
-        if(typeof number === "number"){
-      acc += number
-      
-      
-    
-      }
-
-     
-    
-  return acc / 5
-      
-    }, 0)
+let myVar = 0;
+let ladder = {
+    up: function () {
+        myVar++;
+        return this;
+    },
+    down: function () {
+        myVar--;
+        return this;
+    },
+    showStep: function () {
+        console.log(myVar);
+        return this;
+    },
 };
-console.log(allSum(bobik))
+
+ladder.showStep().up().up().down().showStep();
