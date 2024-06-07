@@ -1,13 +1,11 @@
-let result;
-function getCalculate(a){
+function bebebe(){
+    let sum = 0
+return function(value){
+    sum += value
+    return sum;
+};
    
-    return(b) => {
-        result = a + b
-        return a + b
-    }
-    
-    
 }
-let isName = getCalculate
-isName(7)(2)
-console.log(result)
+let letting = bebebe()
+console.log(letting(10))
+console.log(letting(20))

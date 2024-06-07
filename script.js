@@ -1,17 +1,9 @@
-
-function myNane(arr){
-    let sum = 0
-    let numbers = 0
-    for(let argument of arr){
-      if(typeof argument === "number" )
-sum += argument
-      numbers++
-      let target = sum  / numbers 
-      console.log(target)
-      return target;
-    }
-            
+function whiteList(a,b){
+  if(a < 0 || b < 0){
+    return 0;
+  }
+    return a * b
+  
 }
-let myArr = ["asdasd","asdasd",5,10,20]
-let average = myNane(myArr)
-console.log(average)
+
+console.log(whiteList(10,5))

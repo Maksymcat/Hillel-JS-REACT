@@ -1,17 +1,13 @@
-let myVar = 0;
-let ladder = {
-    up: function () {
-        myVar++;
-        return this;
-    },
-    down: function () {
-        myVar--;
-        return this;
-    },
-    showStep: function () {
-        console.log(myVar);
-        return this;
-    },
-};
-
-ladder.showStep().up().up().down().showStep();
+let  usName;
+let salary;
+let someObject = {
+name: 'mariHanna',
+salary: 15000,
+myFunc: function bebebe(...someBase){
+    usName = this.name
+    salary = this.salary
+    console.log('Імя === ' + `${usName}`+ ' Зарплата === ' + `${salary}`)
+    return;
+}
+}
+console.log(someObject.myFunc())

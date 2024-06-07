@@ -1,18 +1,14 @@
-let myArr = [1,2,3,4,5,6]
-let newArr  = []
-
-function removeElement(a,b){
+let firstNumber = prompt("asd")
+let secondNumber = prompt("asdad")
+function Calculator(a,b ) {
+  this.getPlus = a;
+  this.getMinus = b;
   
+this.getResult = a + b;
+};
+let firstParseNumber = parseInt.firstNumber
+let secondParseNumber = parseInt.secondNumber
 
- for( i = 0;i <= myArr.length;i++){
-  if(b !== myArr[i]){
-    newArr.push(myArr[i])
-  }
+let calculate = new Calculator(firstParseNumber,secondParseNumber);
 
-  
- }
- 
- return newArr.join("")
-}
-let bestArray = removeElement(newArr,1)
-console.log(bestArray)
+alert(calculate.getResult)
