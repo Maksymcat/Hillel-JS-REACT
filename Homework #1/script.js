@@ -1,16 +1,29 @@
-let sumOfSalary = 0;
-let i = 0
-let grogling;
-let company = {
-    sales: [{name: 'John', salary: 15000}, {name: 'Alice', salary:10000},{name: 'baby',age: 15, salary: 15000}],
-    brother: "just bro",}
+let someNumber = 2;
 
-        function findByUserName(userNickName){
-          const result = company.sales.filter((user) => {
-            
-return user.salary 
-          })
-          return result;
-        }
-console.log
-console.log(findByUserName('Alice'))
+let someBtn = document.querySelector("button");
+let newDiv = document.createElement("div");
+let parentElement = document.getElementById("lere");
+parentElement.appendChild(newDiv);
+someBtn.addEventListener("click", tableOfPifagor);
+function tableOfPifagor(event) {
+  let result;
+  for (let i = 2; someNumber < 10; i++) {
+    result = `${someNumber}` * `${i}`;
+
+    
+    newDiv.innerHTML +=
+    "  |||  " + ` ${someNumber}  ` +
+      "  *  " +
+      ` ${i} ` +
+      "  ========  " + 
+      ` ${result} ` + "  |||  ";
+
+    if (i >= 9) {
+      
+newDiv.innerHTML += "<<-----" +  "Табличка множення на " + someNumber
+      i = 2;
+      someNumber += 1;
+      return
+    }
+  }
+}
