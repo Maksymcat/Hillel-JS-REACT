@@ -1,6 +1,6 @@
-let textColor = document.querySelector("div")
-let someBtn = document.querySelector("button")
-function changeColorOnClick(event){ 
-   textColor.classList.toggle("black")
+let result = Math.floor(Math.random() * 9);
+const image = document.querySelector(".myImage");
+image.setAttribute('src', `images/${result}.jpg`)
+if(result === 0){
+    image.setAttribute('src','images/1.jpg')
 }
-someBtn.addEventListener('click', changeColorOnClick)
