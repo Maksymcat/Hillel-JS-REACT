@@ -4,3 +4,13 @@
 .yellow{
     background: yellow;
 }
+.get{
+    width: 400px;
+    height: 400px;
+    color: red;
+}
+.push{
+    width: 400px;
+    height: 400px;
+    color: blue;
+}

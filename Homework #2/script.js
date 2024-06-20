@@ -1,6 +1,14 @@
-let result = Math.floor(Math.random() * 9);
-const image = document.querySelector(".myImage");
-image.setAttribute('src', `images/${result}.jpg`)
-if(result === 0){
-    image.setAttribute('src','images/1.jpg')
+let userData; 
+let someBtn = document.querySelector(".get")
+let someButton = document.querySelector(".push")
+function getUserData(event){
+userData = prompt("Введіть URL")
+
 }
+function useUserData(){
+    window.open(userData)
+}
+
+someBtn.addEventListener("click", getUserData)
+someButton.addEventListener("click", useUserData)
+    
