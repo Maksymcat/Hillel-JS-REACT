@@ -3,9 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>Title</title>
   </head>
   <body>
+    <form class="emailForm">
+      <label for="name">Введіть своє імя</label>
+    <input name="name" id="nameInput" type="text" >
+    <p class="errorTextName"></p>
+    <label for="message">Напишіть повідомлення</label>
+    <input name="message" id="messageInput" type="text">
+    <p class="errorTextMessage "></p>
+    <label for="email">Введіть свій E-mail</label>
+    <input name="email" id="emailInput" type="text">
+    <p class="errorTextEmail"></p>
+ <label for="phone">Введіть свій номер телефону</label>
+    <input name="phone" id="phoneInput" type="tel">
+    <p class="errorTextPhone"></p>
+    
+
+    <input type="submit">
+  </form>
+
+
+
+
+   
     <script src="./script.js"></script>
   </body>
 </html>
