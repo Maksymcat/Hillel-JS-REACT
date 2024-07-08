@@ -1,28 +1,28 @@
-let someObject = {
-  phoneBook: [{name: 'Maksym',
-  phoneNumber: '+38099321543',
-  email: 'enotglobaldisfunction@gmail.com',},
-   {name:'Vanya',phoneNumber:'+38023213535',email:'vanyoknehacker@gmail.com',},
-   {name:'Oleksii',phoneNumber:'+3807777777',email:'lyohazeroproblem@gmail.com',}],
-  findUserByName(userNickName){
-  let result = this.phoneBook.filter((user) => {
-      return user.name === userNickName
-  })
-  return result;
-  },
-  
-  
-  
-  
-  }
-  function CreateNewContact(name,phoneNumber,email){
-      this.name = name 
-      this.phoneNumber = phoneNumber
-      this.email = email
-    
-      }
-  
-  let newUser = new CreateNewContact('aleksandr','38093242344','sashaverni100@gmail.com')
-  someObject.phoneBook.push(newUser)
-  console.log(someObject.findUserByName('aleksandr'))
-  
+class Calculator {
+constructor(one,two){
+
+}
+add(one,two){
+    return one + two
+}
+subtract(one,two){
+    return one - two
+}
+multiply(one,two){
+    return one * two
+}
+divide(one,two){
+    return one / two
+}
+   
+}
+   
+   const calc = new Calculator();
+   
+   console.log(calc.add(5, 3)); // 8
+   
+   console.log(calc.subtract(10, 4)); // 6
+   
+   console.log(calc.multiply(3, 6)); // 18
+   
+   console.log(calc.divide(8, 2)); // 4

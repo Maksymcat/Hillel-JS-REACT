@@ -1,12 +1,30 @@
-div{
-    border: 2px solid red;
-    padding: 40px;
-    color: rebeccapurple;
 
+img{
+    width: 100%;
 }
-#lere{
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 15px ;
-    font-size: 18px;
+.slider{
+    margin-top: 100px;
+    text-align: center;
+}
+.slider__img{
+    margin: auto;
+    width: 700px;
+}
+.slider__block{
+    max-width: 700px;
+    overflow: hidden;
+    margin: auto;
+}
+.slider__line{
+
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: transform ease 1s   ;
+}
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
 }
