@@ -1,7 +1,5 @@
 class Calculator {
-constructor(one,two){
 
-}
 add(one,two){
     return one + two
 }
