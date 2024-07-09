@@ -1,52 +1,100 @@
+let someCounter = 0;
 
-let someArr;
-function Student(name,surname,dateofbirth,arr){
-    this.name = name
-    this.surname = surname
-    this.dateofbirth = dateofbirth
-    this.someArr = arr
-    this.count = -1
-     this.benArr =  new Array(25)
+function Student(name, surname, dateofbirth, arr) {
+  this.name = name;
+  this.surname = surname;
+  this.dateofbirth = dateofbirth;
+  this.rating = arr;
+  this.count = -1;
+  this.arrayOfVisits = new Array(25);
+  this.visits = 0;
 
-     this.benArr.splice(0,1,true)
-     this.func = function(){this.benArr.forEach((elem,index) => {
-        console.log('ben')
-        
-         if(elem === "undefined"){
-       return      this.benArr.splice(this.count,1,true)}
-       
-        
-     })}
-    
-       
-        
+  this.present = function () {
+    if(this.arrayOfVisits[this.arrayOfVisits.length -1] !== undefined){
+      console.log(this.arrayOfVisits)
+      console.log('Массив ПЕРЕПОВНЕНИЙ ')
+      return
+    }
+    this.visits++;
+    this.count++;
+    this.arrayOfVisits.splice(this.count, 1, true);
+  };
+
+  this.absent = function () {
+    if(this.arrayOfVisits[this.arrayOfVisits.length -1] !== undefined){
+      console.log('Массив ПЕРЕПОВНЕНИЙ ')
+      return
+    }
+    this.visits--;
+    this.count++;
+    this.arrayOfVisits.splice(this.count, 1, false);
+  };
+  this.summary = function () {
+    this.rating.forEach((element) => {
+      someCounter += element;
+    });
+    let averageRating = someCounter / this.rating.length;
+    console.log("Середня оцінка =" + averageRating);
+let numberOfVisits = this.visits / 25
+console.log("Середня кількість відвідувань" + numberOfVisits)
+if(averageRating > 90 && numberOfVisits > 0.9){
+  console.log('Молодець!')
 }
-
-this.absent = () => {
-    this.benArr.forEach((elem) => {
-        if(elem === undefined){
-           this.count--
-            this.benArr.push(false)
-        }
-    })
+if(averageRating < 90 && numberOfVisits > 0.9 || averageRating > 90 && numberOfVisits < 0.9 ){
+  console.log('Добре, але можна краще')
 }
-this.summary = () => {
-this.count / 25
+if(averageRating < 90 && numberOfVisits < 0.9){
+  console.log('Редиска!')
 } 
+    return 
+  };
+}
 
-let pavel = new Student('Maksym','Klimchyk',1990,[65,90,50,100,45,65,75,90,95,95,95,65,100,55] )
+let pavel = new Student(
+  "Maksym",
+  "Klimchyk",
+  1990,
+  [100, 90, 50, 100,100 , 100, 100, 90, 95, 95, 95, 100, 100, 100]
+);
 
-let pavels = new Student('Maksym','Klimchyk',1990,[65,90,50,100,45,65,75,90,95,95,95,65,100,55] )
+let pavels = new Student(
+  "Maksym",
+  "Klimchyk",
+  1990,
+  [65, 90, 50, 100, 45, 65, 75, 90, 95, 95, 95, 65, 100, 55]
+);
 
 
-console.log(pavel.benArr)
 
-pavel.func()
-pavel.func()
-pavel.func()
-pavel.func()
-console.log(pavel.benArr)
-  console.log(pavel)
-let ber = new Array(25)
-ber.join('')
-console.log(typeof ber)
+pavel.present();
+pavel.present();
+pavel.present();
+
+pavel.absent();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present()
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.present();
+pavel.summary()
+console.log(pavel.arrayOfVisits);
+console.log(pavel);
+
