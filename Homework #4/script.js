@@ -1,17 +1,19 @@
-let someCounter = 0;
 
+let currentdate = new Date()
 function Student(name, surname, dateofbirth, arr) {
   this.name = name;
   this.surname = surname;
-  this.dateofbirth = dateofbirth;
+  this.dateofbirth = dateofbirth ;
+  this.age = currentdate.getFullYear() - this.dateofbirth
   this.rating = arr;
   this.count = -1;
   this.arrayOfVisits = new Array(25);
   this.visits = 0;
+  this.someCounter = 0
 
   this.present = function () {
     if(this.arrayOfVisits[this.arrayOfVisits.length -1] !== undefined){
-      console.log(this.arrayOfVisits)
+   
       console.log('Массив ПЕРЕПОВНЕНИЙ ')
       return
     }
@@ -31,9 +33,10 @@ function Student(name, surname, dateofbirth, arr) {
   };
   this.summary = function () {
     this.rating.forEach((element) => {
-      someCounter += element;
+      this.someCounter += element;
     });
-    let averageRating = someCounter / this.rating.length;
+    console.log('Йому  ' + `${  this.age  }` +  '  років')
+    let averageRating = this.someCounter / this.rating.length;
     console.log("Середня оцінка =" + averageRating);
 let numberOfVisits = this.visits / 25
 console.log("Середня кількість відвідувань" + numberOfVisits)
@@ -52,16 +55,22 @@ if(averageRating < 90 && numberOfVisits < 0.9){
 
 let pavel = new Student(
   "Maksym",
-  "Klimchyk",
+  "bro",
   1990,
   [100, 90, 50, 100,100 , 100, 100, 90, 95, 95, 95, 100, 100, 100]
 );
 
-let pavels = new Student(
-  "Maksym",
-  "Klimchyk",
+let stefany = new Student(
+  "stepan",
+  "lamboilifero",
+  1985,
+  [65, 50, 50, 45, 45, 65, 75, 35, 40, 70, 25, 65, 75, 55,55,55,55]
+);
+let houston = new Student(
+  "hrihory",
+  "bred-pit",
   1990,
-  [65, 90, 50, 100, 45, 65, 75, 90, 95, 95, 95, 65, 100, 55]
+  [100, 90, 50, 100, 95, 100, 100, 90, 95, 95, 95, 65, 100, 100]
 );
 
 
@@ -69,7 +78,6 @@ let pavels = new Student(
 pavel.present();
 pavel.present();
 pavel.present();
-
 pavel.absent();
 pavel.present();
 pavel.present();
@@ -90,11 +98,36 @@ pavel.present();
 pavel.present();
 pavel.present();
 pavel.present();
-pavel.present();
-pavel.present();
-pavel.present();
+
 pavel.present();
 pavel.summary()
-console.log(pavel.arrayOfVisits);
-console.log(pavel);
+
+
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.absent();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present()
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.present();
+stefany.summary()
 
