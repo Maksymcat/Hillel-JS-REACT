@@ -2,7 +2,7 @@ let timer = document.querySelector('.bober')
 let countMinuts = 1
 let countSeconds = 25
 timer.textContent = '0' + countMinuts + ':' + countSeconds 
-let ver = setInterval(function(){
+let timerInterval = setInterval(function(){
 countSeconds--
 timer.textContent = '0' + countMinuts + ':' + countSeconds
 if(countSeconds < 10){
@@ -13,12 +13,10 @@ if(countSeconds === 0){
    timer.textContent = '0' + countMinuts + ':' + '0' + countSeconds  
    console.log('done')
    if(countMinuts === 0 ){
-      clearInterval(ver)
+      clearInterval(timerInterval)
    }
 }
-else{
-   console.log('nihuya')
-}
+
 },1000)
 
 
