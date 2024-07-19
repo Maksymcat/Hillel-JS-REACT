@@ -1,35 +1,25 @@
-
-class BankAccount {
-
-   constructor(amount){
-    this.amount = amount
+let timer = document.querySelector('.bober')
+let countMinuts = 1
+let countSeconds = 25
+timer.textContent = '0' + countMinuts + ':' + countSeconds 
+let ver = setInterval(function(){
+countSeconds--
+timer.textContent = '0' + countMinuts + ':' + countSeconds
+if(countSeconds < 10){
+   timer.textContent = '0' + countMinuts + ':' + '0' + countSeconds
+} 
+if(countSeconds === 0){
+   countMinuts = 0
+   timer.textContent = '0' + countMinuts + ':' + '0' + countSeconds  
+   console.log('done')
+   if(countMinuts === 0 ){
+      clearInterval(ver)
    }
-   getBalance(){
-   return this.amount
-   }
-   deposit(someSum){
-this.amount += someSum
-   }
-   withdraw(someSum){
-    this.amount -= someSum
-       }
-
-    
-    }
-    
-    const account1 = new BankAccount(1000);
-    
-   console.log(account1.getBalance()); // 1000
-    
-    account1.deposit(500);
-    
-    
-    console.log(account1.getBalance()); // 1500
-    
-    account1.withdraw(200);
-    
-    console.log(account1.getBalance()); // 1300
-
+}
+else{
+   console.log('nihuya')
+}
+},1000)
 
 
 
