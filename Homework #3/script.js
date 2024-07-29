@@ -1,33 +1,33 @@
-let apiKey = '5151b416bdebc3f70c745987946a52fa'
-let div = document.getElementById('bob')
-let diver = document.getElementById('bober')
-let refreshWeather = document.getElementById('refreshWeatherjs')
-
-
-document.addEventListener('DOMContentLoaded', function(){
-
-  getWeatherData()
-   useWeatherData()
- 
-  })
+let company = {
+  sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600}],
+  development: {
+web: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800}],
+internals: [{name: 'Jack', salary: 1300}]
+  }
   
-
-
-
-    function getWeatherData(){
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=Kuznetsovsk&lang=ru&appid=${apiKey}&units=metric`)
-  .then(response => response.json())
-  .then(function(json){
-   useWeatherData(json)
- 
-  })
-    }
-refreshWeather.addEventListener('click',function(){
-setTimeout(getWeatherData, 1000);
-  
-})
-
-function useWeatherData(json){
-    div.textContent = `humidity = ${json.main.humidity}%,  temp = ${json.main.temp}, feels like =  ${json.main.feels_like}`
-   diver.textContent = `Хмарність = ${json.weather[0].description} Швидкість ${json.wind.speed}km/h, pressure = ${json.main.pressure}`
 }
+let couter;
+let counter;
+function sumOfSalary(obj){
+  couter = 0
+  counter = 0
+    for(key in obj){
+      let salaryDI = obj.development.internals[counter].salary
+      let salaryDW = obj.development.web[counter].salary
+      let salarySales = obj.sales[counter].salary
+      counter++
+      couter += salaryDI
+      couter += salarySales
+      couter += salaryDW
+   
+      console.log(couter)
+     if(counter >= 2){
+      console.log('worked')
+      counter = 0 
+      return sumOfSalary(obj.development.web[counter].salary)
+     }
+  }
+  return sumOfSalary(obj.sales);
+}
+sumOfSalary(company)
+

@@ -3,6 +3,7 @@ let images = document.querySelectorAll('.slider__img')
 
  let nextButton = document.querySelector('.button-next')
  let prevButton = document.querySelector('.button-prev')
+ let underSlideBtn = document.querySelector('.slider__underButton')
 
 let width;
 let count = 0;
@@ -62,3 +63,11 @@ function sliderPrev(){
 if(prevButton !== null){
   prevButton.addEventListener('click', sliderPrev )
 }
+  
+underSlideBtn.addEventListener('click', function(event){
+  
+    
+})
+console.log(''.toLowerCase
+
+)
