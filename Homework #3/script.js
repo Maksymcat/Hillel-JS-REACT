@@ -1,27 +1,23 @@
-function getCalculate() {
-  let userInput;
-  let number;
-  for (let i = 0; i < 10; i++) {
-    userInput = prompt("Введіть будь-яке число більше 100");
-    number = parseInt(userInput);
-    let ben = 1;
-    ben += i;
+const createWork = document.querySelector(".createWork");
+const toDoList = document.querySelector(".to-do-list");
 
-    if (number <= 100 && ben === 10) {
-      console.log(
-        "Досягнуто максимально спроб, останнє введене значення --->   " +
-          number
-      );
-      return;
-    } else if (number <= 100) {
-      console.log("Введіть ще раз");
-    } else if (number > 100 && typeof number === "number") {
-      console.log("Ви ввели більше ста --->  " + number);
-      return;
-    } else if (typeof userInput !== "number") {
-      alert("Введіть число");
+const dataInput = document.querySelector(".textOfWork");
+
+
+
+
+createWork.addEventListener("click", function (event) {
+   let li = document.createElement("li");
+  li.textContent = dataInput.value;
+  toDoList.appendChild(li);
+  let buttonForDelete = document.createElement("button");
+  li.appendChild(buttonForDelete);
+  buttonForDelete.classList.add("btn-delete");
+  buttonForDelete.textContent = "Видалити завдання";
+
+  li.addEventListener("click", (event) => {
+    if (event.target.classList.contains("btn-delete")) {
+      toDoList.removeChild(li);
     }
-  }
-}
-
-getCalculate();
+  });
+});
