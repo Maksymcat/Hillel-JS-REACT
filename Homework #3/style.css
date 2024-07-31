@@ -1,0 +1,12 @@
+.btn-delete{
+    background: rebeccapurple;
+    border-radius: 10px;
+    width: 150px;
+    height: 25px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    animation: 1s linear;
+    color: salmon;
+    cursor: pointer;
+    font-size: 14px
+}
