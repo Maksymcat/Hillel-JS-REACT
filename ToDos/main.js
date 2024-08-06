@@ -1,78 +1,79 @@
+
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
+let renderToDos;
 document.addEventListener("DOMContentLoaded", function () {
-  const userTableBody = document.querySelector(".js--todos-wrapper");
+  const ul = document.querySelector(".js--todos-wrapper");
 
-  const saveUserBtn = document.querySelector(".form__btn");
+  const saveToDoBtn = document.querySelector(".form__btn");
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
   let currentUserIndex = null;
 
-  const renderUsers = () => {
+  renderToDos = () => {
   
-    userTableBody.innerHTML = "";
+    ul.innerHTML = "";
 
-    users.forEach((user, index) => {
-      const userRow = document.createElement("li");
-      userRow.classList.add("todo-item");
+    todos.forEach((todo, index) => {
+      const li = document.createElement("li");
+      li.classList.add("todo-item");
+      let todosData = localStorage.getItem("todos");
+   
+      li.innerHTML = `
+      <p class="naInputNeVeshaetsya"   onclick="checked(${index})">  <input type="checkbox" ></p>
+        <span class="todo-item__description">${todo.name}</span>
+                 <button class="todo-item__delete" onclick="removeToDo(${index})">Видалити</button>
+         `;
+         if (JSON.parse(todosData)[index].checked == true) {
+          li.innerHTML = `
+          <p class="naInputNeVeshaetsya"   onclick="checked(${index})">  <input type="checkbox" checked></p>
+            <span class="todo-item__description">${todo.name}</span>
+                     <button class="todo-item__delete" onclick="removeToDo(${index})">Видалити</button>
+             `;
+         }
+       
 
-      userRow.innerHTML = `
-               <p class="naInputNeVeshaetsya"  onclick="checked(${index})">  <input type="checkbox"></p>
-                       <span class="todo-item__description">${user.name}</span>
-                      <button class="todo-item__delete" onclick="removeUser(${index})">Видалити</button> 
-              `;
+      ul.appendChild(li);
+      
 
-      userTableBody.appendChild(userRow);
-
-      let usersData = localStorage.getItem("users");
-      if (JSON.parse(usersData)[index].checked == true) {
-        userRow.innerHTML = `
-         <p class="naInputNeVeshaetsya"   onclick="checked(${index})">  <input type="checkbox" checked></p>
-           <span class="todo-item__description">${user.name}</span>
-                    <button class="todo-item__delete" onclick="removeUser(${index})">Видалити</button>
-            `;
-      } else {
-        userRow.innerHTML = `
-                      <p class="naInputNeVeshaetsya" onclick="checked(${index})">  <input type="checkbox"></p>
-           <span class="todo-item__description">${user.name}</span>
-                    <button class="todo-item__delete" onclick="removeUser(${index})">Видалити</button>
-            `;
-      }
+  
     });
+ 
+ 
   };
+  
 
-  let checked = (index) => {
-    if (users[index].checked == true || null) {
-      users[index].checked = false;
-      localStorage.setItem("users", JSON.stringify(users));
-    } else {
-      users[index].checked = true;
-      localStorage.setItem("users", JSON.stringify(users));
-    }
-  };
+ 
 
-  const removeUser = (index) => {
-    if (confirm("Are you sure you want to delete this user?")) {
-      users.splice(index, 1);
-      localStorage.setItem("users", JSON.stringify(users));
-      renderUsers();
-    }
-  };
-
-  saveUserBtn.addEventListener("click", () => {
+  saveToDoBtn.addEventListener("click", () => {
     const name = document.querySelector(".js--form__input").value;
 
     if (currentUserIndex === null) {
-      const id = users.length ? users[users.length - 1].id + 1 : 1;
-      users.push({ id, name });
+      const id = todos.length ? todos[todos.length - 1].id + 1 : 1;
+      todos.push({ id, name });
     } else {
-      users[currentUserIndex].name = name;
+      todos[currentUserIndex].name = name;
     }
 
-    localStorage.setItem("users", JSON.stringify(users));
-    renderUsers();
+    localStorage.setItem("todos", JSON.stringify(todos));
+    renderToDos();
   });
 
-  renderUsers();
+  renderToDos();
 
-  window.checked = checked;
-  window.removeUser = removeUser;
+  
 });
+
+let removeToDo = (index) => {
+  if (confirm("Are you sure you want to delete this todo?")) {
+    todos.splice(index, 1);
+    localStorage.setItem("todos", JSON.stringify(todos));
+    renderToDos();
+  }
+};
+let   checked = (index) => {
+let completed = {checked:true }
+  if (todos[index].checked == true || null) {
+     completed = {checked: false }
+  } 
+  Object.assign(todos[index],completed)
+  localStorage.setItem("todos", JSON.stringify(todos));
+};
