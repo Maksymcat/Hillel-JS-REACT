@@ -1,20 +1,21 @@
-let container = document.querySelector(".container")
+const Lohness = (callback) => {
+let usname = 'maks'
+let age = prompt('age')
+callback(age)
+}
 
+const ben = (callbackHell, callback) => {
+    let ages = callbackHell
+    let names = 'Maks'
+    console.log(callbackHell)
+callback(callbackHell)
+ 
+   
+}
+const brother = (ages) => {
+    console.log(ages)
+}
 
-
-container.addEventListener('click', function(event) {
-    let target = event.target 
-    console.log(event)
-    if(target.tagName == 'BUTTON'){
-        if(target.className == 'btn-1'){
-            confirm("Ви натиснули кнопку 1 " )
-        } else
-        if(target.className == 'btn-2'){
-           confirm("Ви натиснули кнопку 2")
-        }else 
-       
-            confirm("Ви натиснули кнопку 3")
-        
-           }
-           
+Lohness((age) => {
+    ben((age, ages) => brother(age,ages))
 })
