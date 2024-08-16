@@ -43,7 +43,9 @@ h1, h2 {
     cursor: pointer;
     width: 100px;
 }
-
+.show{
+    display: block;
+}
 .todo-item {
     display: flex;
     padding: 10px;
