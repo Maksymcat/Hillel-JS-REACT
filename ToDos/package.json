@@ -4,11 +4,16 @@
   "description": "",
   "main": "todo.html",
   "scripts": {
+     "build": "babel main.js -o main-compiled.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+   
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
     "botstrap": "^0.20.1",
     "jquery": "^3.7.1"
   },
