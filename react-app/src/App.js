@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div>
-      <Title />
+      <Title text='mojo' />
       <div className='d-flex my-3'>
         <div className='bg-secondary ms-3'>https://swapi.dev/api/</div>
       <Input value={inputValue} onChange={handleInputChange} />
