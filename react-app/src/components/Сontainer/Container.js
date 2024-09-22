@@ -13,7 +13,7 @@ const Container = () => {
     const [smileLikes, setSmileLikes] = useState(parseInt(localStorage.getItem('smileLikes')) || 0);
     const [winner, setWinner] = useState('');
 
-    // Функция для обновления состояния и локального хранилища
+
     const updateLikes = (type, updateLike) => {
         switch (type) {
             case 'cute':
@@ -41,7 +41,7 @@ const Container = () => {
         }
     };
 
-    // Функция для нахождения победителя
+
     const findMaxLikes = () => {
         const maxLikes = Math.max(cuteLikes, loveLikes, starLikes, coolLikes, smileLikes);
         let newWinner = '';
