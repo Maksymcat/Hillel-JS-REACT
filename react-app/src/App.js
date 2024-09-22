@@ -5,10 +5,10 @@ import Cool from './components/Cool/Cool';
 import Love from './components/Love/Love';
 import Star from './components/Star/Star';
 import Container from './components/Сontainer/Container'
-class App extends React.Component {
+const App = () => {
 
 
-  render() {
+ 
   
     return( 
       <>
@@ -16,7 +16,7 @@ class App extends React.Component {
  
     
       </>)
-  }
+  
 }
 
 export default App;

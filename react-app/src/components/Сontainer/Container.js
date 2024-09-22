@@ -1,107 +1,84 @@
-import React from 'react'
-import Cute from '../Cute/Cute'
-import Love from '../Love/Love'
-import Star from '../Star/Star'
-import Cool from '../Cool/Cool'
-import Smile from '../Smile/Smile'
-import { max } from 'lodash'
+import React, { useState } from 'react';
+import Cute from '../Cute/Cute';
+import Love from '../Love/Love';
+import Star from '../Star/Star';
+import Cool from '../Cool/Cool';
+import Smile from '../Smile/Smile';
 
-class Container extends React.Component {
-    constructor(props){
-    super(props);
-    this.state = {
-        cuteLikes: parseInt(localStorage.getItem('cuteLikes')) || 0,
-        loveLikes: parseInt(localStorage.getItem('loveLikes')) || 0,
-        starLikes: parseInt(localStorage.getItem('starLikes')) || 0,
-        coolLikes: parseInt(localStorage.getItem('coolLikes')) || 0,
-        smileLikes: parseInt(localStorage.getItem('smileLikes')) || 0,
-        winner:'',
-        maxLikes:''
-    }
-}
-    updatecuteLikes =  (updateLike) => {
-        this.setState({cuteLikes: updateLike})
-        localStorage.setItem('cuteLikes', JSON.stringify(updateLike))
-    }
-    updateloveLikes =  (updateLike) => {
-        this.setState({loveLikes: updateLike})
-        localStorage.setItem('loveLikes', JSON.stringify(updateLike))
-    }
-    updatestarLikes =  (updateLike) => {
-        this.setState({starLikes: updateLike})
-        localStorage.setItem('starLikes', JSON.stringify(updateLike))
-    }
-    updatecoolLikes =  (updateLike) => {
-        this.setState({coolLikes: updateLike})
-        localStorage.setItem('coolLikes', this.state.coolLikes)
-    }
-    updatesmileLikes =  (updateLike) => {
-        this.setState({smileLikes: updateLike})
-        localStorage.setItem('smileLikes', updateLike)
-    }
-   
-    findMaxLikes = () => {
-       const  maxLikes = Math.max(this.state.cuteLikes, this.state.loveLikes, this.state.starLikes, this.state.coolLikes, this.state.smileLikes)
-       let winner = '';
-       if(maxLikes === this.state.cuteLikes){
-        winner = 'Cute';
-       }else
-       if(maxLikes === this.state.loveLikes){
-        winner = 'Love';
-       }else
-       if(maxLikes === this.state.starLikes){
-        winner = 'Star';
-       }else
-       if(maxLikes === this.state.coolLikes){
-        winner = 'Cool';
-       }else
-       if(maxLikes === this.state.smileLikes){
-        winner = 'Smile';
-        
-       }
-     this.setState({maxLikes})
-       this.setState({winner})
-      
-       
-    }
-    
-    render() {
-        
- 
-        const emojiMap = {
-            Cute: '😊',
-            Love: '❤️',
-            Star: '⭐',
-            Cool: '😎',
-            Smile: '😄',
+const Container = () => {
+    const [cuteLikes, setCuteLikes] = useState(parseInt(localStorage.getItem('cuteLikes')) || 0);
+    const [loveLikes, setLoveLikes] = useState(parseInt(localStorage.getItem('loveLikes')) || 0);
+    const [starLikes, setStarLikes] = useState(parseInt(localStorage.getItem('starLikes')) || 0);
+    const [coolLikes, setCoolLikes] = useState(parseInt(localStorage.getItem('coolLikes')) || 0);
+    const [smileLikes, setSmileLikes] = useState(parseInt(localStorage.getItem('smileLikes')) || 0);
+    const [winner, setWinner] = useState('');
+
+    // Функция для обновления состояния и локального хранилища
+    const updateLikes = (type, updateLike) => {
+        switch (type) {
+            case 'cute':
+                setCuteLikes(updateLike);
+                localStorage.setItem('cuteLikes', JSON.stringify(updateLike));
+                break;
+            case 'love':
+                setLoveLikes(updateLike);
+                localStorage.setItem('loveLikes', JSON.stringify(updateLike));
+                break;
+            case 'star':
+                setStarLikes(updateLike);
+                localStorage.setItem('starLikes', JSON.stringify(updateLike));
+                break;
+            case 'cool':
+                setCoolLikes(updateLike);
+                localStorage.setItem('coolLikes', JSON.stringify(updateLike));
+                break;
+            case 'smile':
+                setSmileLikes(updateLike);
+                localStorage.setItem('smileLikes', JSON.stringify(updateLike));
+                break;
+            default:
+                break;
         }
-        return(
-            <>
-            <div style={{display: 'flex'}}>
-            <Cute likes={this.state.cuteLikes}
-            updatecuteLikes={this.updatecuteLikes}/>
-            <Love likes={this.state.loveLikes}
-            updateloveLikes={this.updateloveLikes}/>
-            <Star likes={this.state.starLikes}
-            updatestarLikes={this.updatestarLikes}/>
-            <Cool likes={this.state.coolLikes}
-            updatecoolLikes={this.updatecoolLikes}/>
-            <Smile likes={this.state.smileLikes}
-            updatesmileLikes={this.updatesmileLikes}/>
-            <button style={{width: 100, height: 30}} onClick={this.findMaxLikes}>Show result</button>
-            {this.state.winner &&   (
-                <div>
-                    <h2> viigrav {emojiMap[this.state.winner]} з результатом {this.state.maxLikes}</h2>
-                </div>
-            )}
+    };
+
+    // Функция для нахождения победителя
+    const findMaxLikes = () => {
+        const maxLikes = Math.max(cuteLikes, loveLikes, starLikes, coolLikes, smileLikes);
+        let newWinner = '';
+        if (maxLikes === cuteLikes) newWinner = 'Cute';
+        else if (maxLikes === loveLikes) newWinner = 'Love';
+        else if (maxLikes === starLikes) newWinner = 'Star';
+        else if (maxLikes === coolLikes) newWinner = 'Cool';
+        else if (maxLikes === smileLikes) newWinner = 'Smile';
+
+        setWinner(newWinner);
+    };
+
+    const emojiMap = {
+        Cute: '😊',
+        Love: '❤️',
+        Star: '⭐',
+        Cool: '😎',
+        Smile: '😄',
+    };
+
+    return (
+        <>
+            <div style={{ display: 'flex' }}>
+                <Cute likes={cuteLikes} updateLikes={(likes) => updateLikes('cute', likes)} />
+                <Love likes={loveLikes} updateLikes={(likes) => updateLikes('love', likes)} />
+                <Star likes={starLikes} updateLikes={(likes) => updateLikes('star', likes)} />
+                <Cool likes={coolLikes} updateLikes={(likes) => updateLikes('cool', likes)} />
+                <Smile likes={smileLikes} updateLikes={(likes) => updateLikes('smile', likes)} />
+                <button style={{ width: 100, height: 30 }} onClick={findMaxLikes}>Show result</button>
+                {winner && (
+                    <div>
+                        <h2>Победитель: {winner} {emojiMap[winner]} з результатом {Math.max(cuteLikes, loveLikes, starLikes, coolLikes, smileLikes)}</h2>
+                    </div>
+                )}
             </div>
-            </>
-            
-        )
-    }
-  
-}
-
-
+        </>
+    );
+};
 
 export default Container;
