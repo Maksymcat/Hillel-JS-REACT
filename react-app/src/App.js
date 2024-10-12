@@ -1,22 +1,13 @@
-import React from 'react';
-import Smile from './components/Smile/Smile'
-import Cute from './components/Cute/Cute';
-import Cool from './components/Cool/Cool';
-import Love from './components/Love/Love';
-import Star from './components/Star/Star';
-import Container from './components/Сontainer/Container'
+import React, { useEffect, useState } from "react";
+import Header from "./components/Header/Header";
+
 const App = () => {
-
-
- 
-  
-    return( 
-      <>
-      <Container/>
- 
-    
-      </>)
-  
-}
+  return (
+    <>
+      <Header />
+    </>
+  );
+};
 
 export default App;
+
