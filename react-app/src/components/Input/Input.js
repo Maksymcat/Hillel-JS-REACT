@@ -2,7 +2,7 @@ import React from 'react'
 
 const Input = ({onChange}) => {
     return ( 
-        <input onChange={onChange} type='text'></input>
+        <input placeholder='todos/comments' onChange={onChange} type='text'></input>
     )
 }
 export default Input;

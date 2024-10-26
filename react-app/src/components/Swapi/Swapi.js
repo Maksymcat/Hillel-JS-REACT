@@ -37,7 +37,7 @@ const Swapi = () => {
         
 <>
                 <>
-                    <Button onClick={saveInput}/>
+                    <Button onClick={saveInput}/><div>https://jsonplaceholder.typicode.com/</div>
                     <Input onChange={link} />
                     <ClearButton clear={clear}/>
                     <div style={{ width: '1000px', height: '500px', overflow: 'hidden', border: '3px solid black'}}>
