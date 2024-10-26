@@ -1,20 +1,15 @@
 import React from "react";
+import store from "./store";
 import { Provider } from "react-redux";
-import store from './store';
-
-import Header from "./components/Header/Header";
-import Counter from './Counter';
+import Swapi from "./components/Swapi/Swapi";
 
 const App = () => {
-  return (
-    <>
-     <Provider store={store}>
-      <Header/>
-    </Provider>
+  return ( 
+    <Provider store={store}>
      
-    </>
+      <Swapi />
+    </Provider>
   );
 };
 
 export default App;
-
