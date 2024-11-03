@@ -1,28 +1,24 @@
-export const fetchTodos = ({inputValue, clear}) => {
-    return (dispatch) => {
-      
-        dispatch({ type: 'FETCH_TODOS_REQUEST' });
+export const addTodo = (text) => ({
+    type: 'ADD_TODO',
+    payload: {text}
+});
+export const loadTodo = () => ({
+    type: 'LOAD_TODOS',
+});
 
-        fetch(`https://jsonplaceholder.typicode.com/${inputValue}/`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(inputValue)
-                console.log(data)
-                dispatch({ type: 'FETCH_TODOS_SUCCESS', payload: data }); 
-            })
-            .catch(error => {
-                dispatch({ type: 'FETCH_TODOS_FAILURE', error: error.message });
-            });
-    };
-};
-export const CLEAR_TODOS = 'CLEAR_TODOS';
-
-export const clearTodos = () => {
-    console.log('todos')
-    return { type: CLEAR_TODOS };
-};
+export const removeTodo = (id)  => ({
+type: 'REMOVE_TODO',
+payload: {id}
+}); 
+export const toggleTodo = (id) => ({
+    type: 'TOGGLE_TODO',
+    payload: {id}
+});  
+        
+export const editText = (id,text) => ({
+    type: 'EDIT_TEXT',
+    payload: {id,text}
+});
+export const clearCompletedTodos = () => ({
+    type: 'CLEAR_TODOS',
+  });
