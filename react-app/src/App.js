@@ -1,10 +1,18 @@
-import React, { useEffect, useState } from "react";
+
 import Header from "./components/Header/Header";
+import React from "react";
+import store from "./store";
+import { Provider } from "react-redux";
+
 
 const App = () => {
   return (
     <>
-      <Header />
+     <Provider store={store}>
+     
+     <Header />
+   </Provider>
+     
     </>
   );
 };

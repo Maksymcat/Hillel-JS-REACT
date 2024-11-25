@@ -66,14 +66,14 @@ h1, h2 {
   font-weight: 900;
 }
 .todo-item__delete {
-  background: #0be69d;
+  background: #0ee59d;
   border: none;
   cursor: pointer;
   width: 95px;
   padding: 10px;
 }
 .naInputNeVeshaetsya{
-  height: 13px;
+  height: 13px; 
   width: 13px;
   margin-bottom:3px;
 }
